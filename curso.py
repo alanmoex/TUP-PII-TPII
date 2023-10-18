@@ -1,4 +1,9 @@
+import random
+import string
+
 class Curso:
+    largo_contraseña_matriculacion = 6
+
     def __init__(self, nombre: str, contraseña_matriculacion: str) -> None:
         self.__nombre = nombre
         self.__contraseña_matriculacion = contraseña_matriculacion
@@ -22,3 +27,10 @@ class Curso:
     def __str__(self) -> str:
         return f"Curso: {self.__nombre}. Contraseña de matriculación: {self.__contraseña_matriculacion}"
     
+    def generar_contraseña(cls) -> str:
+        return(
+            "".join(
+                random.choice(string.ascii_letters + string.digits)
+                for _ in range(Curso.largo_contraseña_matriculacion)
+            )
+        )
