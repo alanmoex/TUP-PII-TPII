@@ -40,7 +40,7 @@ class Usuario(ABC):
         self.__contraseña = contraseña
 
     def __str__(self) -> str:
-        return f"Nombre: {self.nombre}. Apellido: {self.apellido}. Email: {self.email}. Contraseña: {self.contraseña}"
+        return f"Nombre: {self.nombre}. Apellido: {self.apellido}. Email: {self.email}. Contraseña: {self.contraseña}."
 
     def validar_credenciales(self, email: str, contraseña: str) -> bool:
         if email == self.email and contraseña == self.contraseña:
