@@ -24,7 +24,7 @@ class Profesor(Usuario):
         self.__año_egreso = año_egreso
 
     #-------------------------
-    #falta getter y setter de mis cursos
+    #falta getter de mis cursos
     #--------------------------
 
     def __str__(self) -> str:
