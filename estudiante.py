@@ -5,6 +5,7 @@ class Estudiante(Usuario):
         super().__init__(nombre, apellido, email, contraseña)
         self.__legajo = legajo
         self.__año_inscripcion_carrera = año_inscripcion_carrera
+        self.__mis_cursos = []
     
     #getter y setter de legajo
     @property
@@ -21,7 +22,15 @@ class Estudiante(Usuario):
     @año_inscripcion_carrera.setter
     def año_inscripcion_carrera(self, año_inscripcion_carrera:int):
         self.__año_inscripcion_carrera = año_inscripcion_carrera
+    
+    #-------------------------
+    #falta getter y setter de mis cursos
+    #--------------------------
 
     def __str__(self) -> str:
         return super().__str__() + f" Legajo: {self.legajo}. Año de inscripción: {self.año_inscripcion_carrera}"
+    
+    def matricular_en_curso(self, curso:object) -> None:
+        self.__mis_cursos.append(curso)
+
     
