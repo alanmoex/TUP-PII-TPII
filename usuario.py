@@ -43,7 +43,4 @@ class Usuario(ABC):
         return f"Nombre: {self.nombre}. Apellido: {self.apellido}. Email: {self.email}. Contraseña: {self.contraseña}."
 
     def validar_credenciales(self, email: str, contraseña: str) -> bool:
-        if email == self.email and contraseña == self.contraseña:
-            return True
-        else:
-            return False
+        return email == self.email and contraseña == self.contraseña
