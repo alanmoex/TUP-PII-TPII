@@ -5,6 +5,7 @@ class Profesor(Usuario):
         super().__init__(nombre, apellido, email, contraseña)
         self.__titulo = titulo
         self.__año_egreso = año_egreso
+        self.__mis_cursos = []
     
     #getter y setter de titulo
     @property
@@ -22,7 +23,14 @@ class Profesor(Usuario):
     def año_egreso(self, año_egreso:int):
         self.__año_egreso = año_egreso
 
+    #-------------------------
+    #falta getter y setter de mis cursos
+    #--------------------------
+
     def __str__(self) -> str:
         return super().__str__() + f" Titulo: {self.titulo}. Año de egreso: {self.año_egreso}"
 
 
+    #-------------------------
+    #falta funcion dictar curso
+    #--------------------------
