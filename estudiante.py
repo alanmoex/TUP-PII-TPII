@@ -5,7 +5,7 @@ class Estudiante(Usuario):
         super().__init__(nombre, apellido, email, contraseña)
         self.__legajo = legajo
         self.__año_inscripcion_carrera = año_inscripcion_carrera
-        self.__mis_cursos = []
+        self.__mis_cursos = [] #se podria colocar en usuario
     
     #getter y setter de legajo
     @property
