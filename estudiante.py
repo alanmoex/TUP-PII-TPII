@@ -25,11 +25,12 @@ class Estudiante(Usuario):
         self.__año_inscripcion_carrera = año_inscripcion_carrera
 
     @property
-    def mis_cursos(self):
         return self.__mis_cursos
 
-    def matricularse(self, curso):
-        self.__mis_cursos.append(curso)
+    @mis_cursos.setter
+    def mis_cursos(self, mis_cursos: object):
+        self.__carrera = mis_cursos
+
     @property
     def carrera(self) -> object:
         return self.__carrera
@@ -42,11 +43,11 @@ class Estudiante(Usuario):
     def __str__(self) -> str:
         return super().__str__() + f" Legajo: {self.legajo}. Año de inscripción: {self.año_inscripcion_carrera}"
 
-    def matricularse_en_curso(self, curso: object, contraseña_matriculación: str) -> str:
-        if curso in self.__mis_cursos:
-            return "Ya estás matriculado en este curso."        
-        if contraseña_matriculación == curso.contraseña_matriculacion:
-            self.__mis_cursos.append(curso)
-            return f"Te has matriculado en el curso: {curso.nombre}."
+    def matricularse_en_curso(self, curso: object, contra: str) -> str:
+        if curso in self.mis_cursos:
+            return "\nYa estás matriculado en este curso.\n"        
+        if contra == curso.contraseña_matriculacion:
+            self.mis_cursos.append(curso)
+            return f"\nTe has matriculado en el curso: {curso.nombre}.\n"
         else:
             return "La contraseña de matriculación es incorrecta."
