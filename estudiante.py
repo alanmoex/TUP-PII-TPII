@@ -25,6 +25,7 @@ class Estudiante(Usuario):
         self.__año_inscripcion_carrera = año_inscripcion_carrera
 
     @property
+    def mis_cursos(self) -> object:
         return self.__mis_cursos
 
     @mis_cursos.setter
@@ -50,4 +51,9 @@ class Estudiante(Usuario):
             self.mis_cursos.append(curso)
             return f"\nTe has matriculado en el curso: {curso.nombre}.\n"
         else:
-            return "La contraseña de matriculación es incorrecta."
+            return "\nLa contraseña de matriculación es incorrecta.\n"
+
+    def desmatricularse_en_curso(self, curso: object) -> str:
+        self.mis_cursos.remove(curso)
+
+    
