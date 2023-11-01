@@ -1,11 +1,12 @@
 from usuario import Usuario
 
 class Estudiante(Usuario):
-    def __init__(self, nombre: str, apellido: str, email: str, contraseña: str, legajo: int, año_inscripcion_carrera: int) -> None:
+    def __init__(self, nombre: str, apellido: str, email: str, contraseña: str, legajo: int, año_inscripcion_carrera: int, carrera: object) -> None:
         super().__init__(nombre, apellido, email, contraseña)
         self.__legajo = legajo
         self.__año_inscripcion_carrera = año_inscripcion_carrera
         self.__mis_cursos = []
+        self.__carrera = carrera
 
     @property
     def legajo(self) -> int:
@@ -29,6 +30,14 @@ class Estudiante(Usuario):
 
     def matricularse(self, curso):
         self.__mis_cursos.append(curso)
+    @property
+    def carrera(self) -> object:
+        return self.__carrera
+    
+    @carrera.setter
+    def carrera(self, carrera: object):
+        self.__carrera = carrera
+
 
     def __str__(self) -> str:
         return super().__str__() + f" Legajo: {self.legajo}. Año de inscripción: {self.año_inscripcion_carrera}"
