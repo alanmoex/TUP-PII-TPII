@@ -10,6 +10,7 @@ class Curso:
         self.__codigo = Curso.get_prox_nro()
         self.__contraseña_matriculacion = self.generar_contraseña()
         self.__carrera = carrera
+        self.__archivos = []
 
     @property
     def nombre(self) -> str:
@@ -26,15 +27,23 @@ class Curso:
     @property
     def contraseña_matriculacion(self) -> str:
         return self.__contraseña_matriculacion
+    
     @property
     def carrera(self) -> object:
         return self.__carrera
+    
     @carrera.setter
     def carrera(self, carrera: object):
         self.__carrera = carrera
+    
+    @property
+    def archivos(self) -> object:
+        return self.__archivos
 
     def __str__(self) -> str:
         return f"Materia: {self.__nombre}\nContraseña: {self.__contraseña_matriculacion}"
+    def nuevo_archivo(self, archivo:object) -> None:
+        self.archivos.append(archivo)
 
     @classmethod
     def generar_contraseña(cls) -> str:
