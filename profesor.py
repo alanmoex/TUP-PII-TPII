@@ -31,20 +31,7 @@ class Profesor(Usuario):
     def __str__(self) -> str:
         return super().__str__() + f" Título: {self.titulo}. Año de egreso: {self.año_egreso}"
 
-    def dictar_curso(self, nombre_curso: str):
-        contraseña_matriculacion = Curso.generar_contraseña()
+    def dictar_curso(self, curso:object):
+        self.__mis_cursos.append(curso)
+        print(f"Curso {curso.nombre} dado de alta con éxito.")
 
-        nuevo_curso = Curso(nombre_curso, contraseña_matriculacion)
-
-        self.__mis_cursos.append(nuevo_curso)
-
-        print(f"Curso {nombre_curso} dado de alta con éxito.")
-        print(f"Contraseña de matriculación: {contraseña_matriculacion}")
-
-    def ver_cursos(self):
-        if not self.__mis_cursos:
-            print("No tienes cursos disponibles.")
-        else:
-            print("Tus cursos:")
-            for i, curso in enumerate(self.__mis_cursos, start=1):
-                print(f"{i} {curso.nombre}")
