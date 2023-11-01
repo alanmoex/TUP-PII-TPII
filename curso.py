@@ -41,7 +41,8 @@ class Curso:
         return self.__archivos
 
     def __str__(self) -> str:
-        return f"Materia: {self.__nombre}\nContraseña: {self.__contraseña_matriculacion}"
+        return f"Nombre: {self.nombre}\nCodigo: {self.codigo}\nContraseña: {self.contraseña_matriculacion}"
+
     def nuevo_archivo(self, archivo:object) -> None:
         self.archivos.append(archivo)
 
