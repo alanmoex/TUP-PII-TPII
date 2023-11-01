@@ -38,7 +38,8 @@ class Usuario(ABC):
     @contraseña.setter
     def contraseña(self, contraseña: str):
         self.__contraseña = contraseña
-
+        
+    @abstractmethod
     def __str__(self) -> str:
         return f"Nombre: {self.nombre}. Apellido: {self.apellido}. Email: {self.email}. Contraseña: {self.contraseña}."
 
